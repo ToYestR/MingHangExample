@@ -26,7 +26,7 @@ public class Login : MonoBehaviour
         loginBtn.onClick.AddListener(OnLoginBtnClick);
         JoinRoom.onClick.AddListener(OnJoinBtnClick);
         connectBtn.onClick.AddListener(OnConnectBtnClick);
-        press.onClick.AddListener(Pressure);
+        //press.onClick.AddListener(Pressure);
         ClientManager.Instance.InitSocket("54.223.80.84", "10001");
         //登陆+房间进入
         //LoginFuction();
@@ -59,7 +59,9 @@ public class Login : MonoBehaviour
     {
         ClientManager.Instance.Send(new JoiRoomInLobbyRequest()
         {
-            RoomName = roomnameExcute.text
+            RoomName = roomnameExcute.text,
+            RoomMaxplayer = 50
+
         }) ;
     }
     public void LeaveRoomInLobby()

@@ -39,43 +39,45 @@ namespace Im {
             "ASgJEhoKEnJvb21fcGVvcGxlX21vbWJlchgDIAEoCRIQCghuYW1lbGlzdBgE",
             "IAMoCRITCgtyb29tX3N0YXR1cxgFIAEoBRIYChBvcGVyYXRvcnNfbnVtYmVy",
             "GAYgASgFEhYKDnZpZXdlcnNfbnVtYmVyGAcgASgFEhYKDnVzZXJfd2l0aF9y",
-            "b2xlGAggASgJEhoKEmN1cnJlbnRfdGFza19pbmRleBgJIAEoBSIqChVKb2lS",
-            "b29tSW5Mb2JieVJlcXVlc3QSEQoJcm9vbV9uYW1lGAEgASgJIlAKF0pvaW5S",
-            "b29tSW5Mb2JieVJlc3BvbnNlEg4KBnJlc3VsdBgBIAEoCBIQCghpc01hc3Rl",
-            "chgCIAEoCBITCgtkZXNjcmlwdGlvbhgDIAEoCSIlChBMZWF2ZVJvb21SZXF1",
-            "ZXN0EhEKCXJvb21fbmFtZRgBIAEoCSITChFMZWF2ZVJvb21SZXNwb25zZSI0",
-            "ChJPblJvb21JbmZvUmVzcG9uc2USHgoIcm9sZUluZm8YASABKAsyDC5JbS5S",
-            "b29tSW5mbyKSAQoVVXBkYXRlUm9vbUluZm9SZXF1ZXN0EhMKC3Jvb21fc3Rh",
-            "dHVzGAEgASgFEhgKEG9wZXJhdG9yc19udW1iZXIYAiABKAUSFgoOdmlld2Vy",
-            "c19udW1iZXIYAyABKAUSFgoOdXNlcl93aXRoX3JvbGUYBCABKAkSGgoSY3Vy",
-            "cmVudF90YXNrX2luZGV4GAUgASgFIhEKD0xpc3RSb29tUmVxdWVzdCIiCg9K",
-            "b2luUm9vbVJlcXVlc3QSDwoHcm9vbV9ubxgBIAEoCSI1ChNQdXNoVGFza0lu",
-            "Zm9SZXF1ZXN0Eh4KCHRhc2tpbmZvGAEgASgLMgwuSW0uVGFza0luZm8iLwoP",
-            "UHVzaFRhc2tJbmZvUnNwEhwKBnRhc2tpZBgBIAEoCzIMLkltLlRhc2tJbmZv",
-            "IlEKCFRhc2tJbmZvEgwKBHRpbWUYASABKAESDgoGdGFza2lkGAIgASgFEg8K",
-            "B2NoYXRlcnAYAyABKAUSFgoOcGxheWFibGVzdGF0dXMYBCABKAUiIgoPRXhp",
-            "dFJvb21SZXF1ZXN0Eg8KB3Jvb21fbm8YASABKAkiNgoNRXJyb3JSZXNwb25z",
-            "ZRIQCghlcnJfY29kZRgBIAEoBRITCgtlcnJfbWVzc2FnZRgCIAEoCSIiCg9T",
-            "dWNjZXNzUmVzcG9uc2USDwoHbWVzc2FnZRgBIAEoCSISChBTdGFydEdhbWVS",
-            "ZXF1ZXN0Ig4KDFN0YXJ0R2FtZVJzcCJBCgtHYW1lQ29tbWFuZBIhCgR0eXBl",
-            "GAEgASgOMhMuSW0uR2FtZUNvbW1hbmRUeXBlEg8KB2NvbnRlbnQYAiABKAki",
-            "NgoFSW1Nc2cSCgoCaWQYASABKAUSIQoDbXNnGAIgASgLMhQuZ29vZ2xlLnBy",
-            "b3RvYnVmLkFueSI2ChBKb2luUm9vbVJlc3BvbnNlEiIKCnBsYXllclBhY2sY",
-            "ASADKAsyDi5JbS5QbGF5ZXJQYWNrIisKBVVwUG9zEiIKCnBsYXllclBhY2sY",
-            "ASABKAsyDi5JbS5QbGF5ZXJQYWNrIjMKDVVwUG9zUmVzcG9uc2USIgoKcGxh",
-            "eWVyUGFjaxgBIAEoCzIOLkltLlBsYXllclBhY2siiwEKClBsYXllclBhY2sS",
-            "CwoDdWlkGAEgASgJEhwKB3Bvc1BhY2sYAiABKAsyCy5JbS5Qb3NQYWNrEh4K",
-            "CGFuaW1QYWNrGAMgASgLMgwuSW0uQW5pbVBhY2sSEAoIbmlja05hbWUYBCAB",
-            "KAkSDgoGY2hhdG5vGAUgASgJEhAKCHJvbGVJbmZvGAYgASgJIjgKB1Bvc1Bh",
-            "Y2sSCQoBeBgBIAEoAhIJCgF5GAIgASgCEgkKAXoYAyABKAISDAoEcm90WRgE",
-            "IAEoAiJLCghBbmltUGFjaxINCgVzcGVlZBgBIAEoAhIMCgRKdW1wGAIgASgI",
-            "EhAKCEdyb3VuZGVkGAMgASgIEhAKCEZyZWVGYWxsGAQgASgIIi8KCUFkZFBs",
-            "YXllchIiCgpwbGF5ZXJQYWNrGAEgASgLMg4uSW0uUGxheWVyUGFjayIsCgZM",
-            "b2dvdXQSIgoKcGxheWVyUGFjaxgBIAEoCzIOLkltLlBsYXllclBhY2siLgoI",
-            "RXhpdFJvb20SIgoKcGxheWVyUGFjaxgBIAEoCzIOLkltLlBsYXllclBhY2sq",
-            "RgoPR2FtZUNvbW1hbmRUeXBlEhgKFFVwZGF0ZV9Sb29tX01heHVzZXJzEAAS",
-            "GQoVU3luY19Sb29tX1VzZXJfU3RhdHVzEAFCKQoeY29tLm1nZWUubmV0dHku",
-            "c2VydmVyLnByb3RvYnVmQgdJbVByb3RvYgZwcm90bzM="));
+            "b2xlGAggASgJEhoKEmN1cnJlbnRfdGFza19pbmRleBgJIAEoBSJCChVKb2lS",
+            "b29tSW5Mb2JieVJlcXVlc3QSEQoJcm9vbV9uYW1lGAEgASgJEhYKDnJvb21f",
+            "bWF4cGxheWVyGAIgASgFIlAKF0pvaW5Sb29tSW5Mb2JieVJlc3BvbnNlEg4K",
+            "BnJlc3VsdBgBIAEoCBIQCghpc01hc3RlchgCIAEoCBITCgtkZXNjcmlwdGlv",
+            "bhgDIAEoCSIlChBMZWF2ZVJvb21SZXF1ZXN0EhEKCXJvb21fbmFtZRgBIAEo",
+            "CSI6ChFMZWF2ZVJvb21SZXNwb25zZRITCgtwbGF5ZXJfbmFtZRgBIAEoCRIQ",
+            "Cghpc01hc3RlchgCIAEoCCI0ChJPblJvb21JbmZvUmVzcG9uc2USHgoIcm9s",
+            "ZUluZm8YASABKAsyDC5JbS5Sb29tSW5mbyKSAQoVVXBkYXRlUm9vbUluZm9S",
+            "ZXF1ZXN0EhMKC3Jvb21fc3RhdHVzGAEgASgFEhgKEG9wZXJhdG9yc19udW1i",
+            "ZXIYAiABKAUSFgoOdmlld2Vyc19udW1iZXIYAyABKAUSFgoOdXNlcl93aXRo",
+            "X3JvbGUYBCABKAkSGgoSY3VycmVudF90YXNrX2luZGV4GAUgASgFIhEKD0xp",
+            "c3RSb29tUmVxdWVzdCIiCg9Kb2luUm9vbVJlcXVlc3QSDwoHcm9vbV9ubxgB",
+            "IAEoCSI1ChNQdXNoVGFza0luZm9SZXF1ZXN0Eh4KCHRhc2tpbmZvGAEgASgL",
+            "MgwuSW0uVGFza0luZm8iLwoPUHVzaFRhc2tJbmZvUnNwEhwKBnRhc2tpZBgB",
+            "IAEoCzIMLkltLlRhc2tJbmZvIlEKCFRhc2tJbmZvEgwKBHRpbWUYASABKAES",
+            "DgoGdGFza2lkGAIgASgFEg8KB2NoYXRlcnAYAyABKAUSFgoOcGxheWFibGVz",
+            "dGF0dXMYBCABKAUiIgoPRXhpdFJvb21SZXF1ZXN0Eg8KB3Jvb21fbm8YASAB",
+            "KAkiNgoNRXJyb3JSZXNwb25zZRIQCghlcnJfY29kZRgBIAEoBRITCgtlcnJf",
+            "bWVzc2FnZRgCIAEoCSIiCg9TdWNjZXNzUmVzcG9uc2USDwoHbWVzc2FnZRgB",
+            "IAEoCSISChBTdGFydEdhbWVSZXF1ZXN0Ig4KDFN0YXJ0R2FtZVJzcCJBCgtH",
+            "YW1lQ29tbWFuZBIhCgR0eXBlGAEgASgOMhMuSW0uR2FtZUNvbW1hbmRUeXBl",
+            "Eg8KB2NvbnRlbnQYAiABKAkiNgoFSW1Nc2cSCgoCaWQYASABKAUSIQoDbXNn",
+            "GAIgASgLMhQuZ29vZ2xlLnByb3RvYnVmLkFueSI2ChBKb2luUm9vbVJlc3Bv",
+            "bnNlEiIKCnBsYXllclBhY2sYASADKAsyDi5JbS5QbGF5ZXJQYWNrIisKBVVw",
+            "UG9zEiIKCnBsYXllclBhY2sYASABKAsyDi5JbS5QbGF5ZXJQYWNrIjMKDVVw",
+            "UG9zUmVzcG9uc2USIgoKcGxheWVyUGFjaxgBIAEoCzIOLkltLlBsYXllclBh",
+            "Y2siiwEKClBsYXllclBhY2sSCwoDdWlkGAEgASgJEhwKB3Bvc1BhY2sYAiAB",
+            "KAsyCy5JbS5Qb3NQYWNrEh4KCGFuaW1QYWNrGAMgASgLMgwuSW0uQW5pbVBh",
+            "Y2sSEAoIbmlja05hbWUYBCABKAkSDgoGY2hhdG5vGAUgASgJEhAKCHJvbGVJ",
+            "bmZvGAYgASgJIjgKB1Bvc1BhY2sSCQoBeBgBIAEoAhIJCgF5GAIgASgCEgkK",
+            "AXoYAyABKAISDAoEcm90WRgEIAEoAiJLCghBbmltUGFjaxINCgVzcGVlZBgB",
+            "IAEoAhIMCgRKdW1wGAIgASgIEhAKCEdyb3VuZGVkGAMgASgIEhAKCEZyZWVG",
+            "YWxsGAQgASgIIi8KCUFkZFBsYXllchIiCgpwbGF5ZXJQYWNrGAEgASgLMg4u",
+            "SW0uUGxheWVyUGFjayIsCgZMb2dvdXQSIgoKcGxheWVyUGFjaxgBIAEoCzIO",
+            "LkltLlBsYXllclBhY2siLgoIRXhpdFJvb20SIgoKcGxheWVyUGFjaxgBIAEo",
+            "CzIOLkltLlBsYXllclBhY2sqRgoPR2FtZUNvbW1hbmRUeXBlEhgKFFVwZGF0",
+            "ZV9Sb29tX01heHVzZXJzEAASGQoVU3luY19Sb29tX1VzZXJfU3RhdHVzEAFC",
+            "KQoeY29tLm1nZWUubmV0dHkuc2VydmVyLnByb3RvYnVmQgdJbVByb3RvYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Im.GameCommandType), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -90,10 +92,10 @@ namespace Im {
             new pbr::GeneratedClrTypeInfo(typeof(global::Im.LobbyInfoRequest), global::Im.LobbyInfoRequest.Parser, null, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Im.LobbyInfoRsp), global::Im.LobbyInfoRsp.Parser, new[]{ "MRoomInlobby" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Im.RoomInfo), global::Im.RoomInfo.Parser, new[]{ "RoomName", "RoomMaxusers", "RoomPeopleMomber", "Namelist", "RoomStatus", "OperatorsNumber", "ViewersNumber", "UserWithRole", "CurrentTaskIndex" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Im.JoiRoomInLobbyRequest), global::Im.JoiRoomInLobbyRequest.Parser, new[]{ "RoomName" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Im.JoiRoomInLobbyRequest), global::Im.JoiRoomInLobbyRequest.Parser, new[]{ "RoomName", "RoomMaxplayer" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Im.JoinRoomInLobbyResponse), global::Im.JoinRoomInLobbyResponse.Parser, new[]{ "Result", "IsMaster", "Description" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Im.LeaveRoomRequest), global::Im.LeaveRoomRequest.Parser, new[]{ "RoomName" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Im.LeaveRoomResponse), global::Im.LeaveRoomResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Im.LeaveRoomResponse), global::Im.LeaveRoomResponse.Parser, new[]{ "PlayerName", "IsMaster" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Im.OnRoomInfoResponse), global::Im.OnRoomInfoResponse.Parser, new[]{ "RoleInfo" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Im.UpdateRoomInfoRequest), global::Im.UpdateRoomInfoRequest.Parser, new[]{ "RoomStatus", "OperatorsNumber", "ViewersNumber", "UserWithRole", "CurrentTaskIndex" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Im.ListRoomRequest), global::Im.ListRoomRequest.Parser, null, null, null, null, null),
@@ -1591,7 +1593,7 @@ namespace Im {
     public const int RoomNameFieldNumber = 1;
     private string roomName_ = "";
     /// <summary>
-    ///但钱房间名
+    ///当前钱房间名
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string RoomName {
@@ -1918,7 +1920,7 @@ namespace Im {
   }
 
   /// <summary>
-  ///加入大厅内的房间
+  ///加入或创建大厅内的房间
   /// </summary>
   public sealed partial class JoiRoomInLobbyRequest : pb::IMessage<JoiRoomInLobbyRequest> {
     private static readonly pb::MessageParser<JoiRoomInLobbyRequest> _parser = new pb::MessageParser<JoiRoomInLobbyRequest>(() => new JoiRoomInLobbyRequest());
@@ -1946,6 +1948,7 @@ namespace Im {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public JoiRoomInLobbyRequest(JoiRoomInLobbyRequest other) : this() {
       roomName_ = other.roomName_;
+      roomMaxplayer_ = other.roomMaxplayer_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1968,6 +1971,20 @@ namespace Im {
       }
     }
 
+    /// <summary>Field number for the "room_maxplayer" field.</summary>
+    public const int RoomMaxplayerFieldNumber = 2;
+    private int roomMaxplayer_;
+    /// <summary>
+    ///房间的最大人数设置
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int RoomMaxplayer {
+      get { return roomMaxplayer_; }
+      set {
+        roomMaxplayer_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as JoiRoomInLobbyRequest);
@@ -1982,6 +1999,7 @@ namespace Im {
         return true;
       }
       if (RoomName != other.RoomName) return false;
+      if (RoomMaxplayer != other.RoomMaxplayer) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1989,6 +2007,7 @@ namespace Im {
     public override int GetHashCode() {
       int hash = 1;
       if (RoomName.Length != 0) hash ^= RoomName.GetHashCode();
+      if (RoomMaxplayer != 0) hash ^= RoomMaxplayer.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -2006,6 +2025,10 @@ namespace Im {
         output.WriteRawTag(10);
         output.WriteString(RoomName);
       }
+      if (RoomMaxplayer != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(RoomMaxplayer);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -2016,6 +2039,9 @@ namespace Im {
       int size = 0;
       if (RoomName.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(RoomName);
+      }
+      if (RoomMaxplayer != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(RoomMaxplayer);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -2031,6 +2057,9 @@ namespace Im {
       if (other.RoomName.Length != 0) {
         RoomName = other.RoomName;
       }
+      if (other.RoomMaxplayer != 0) {
+        RoomMaxplayer = other.RoomMaxplayer;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -2044,6 +2073,10 @@ namespace Im {
             break;
           case 10: {
             RoomName = input.ReadString();
+            break;
+          }
+          case 16: {
+            RoomMaxplayer = input.ReadInt32();
             break;
           }
         }
@@ -2406,12 +2439,42 @@ namespace Im {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public LeaveRoomResponse(LeaveRoomResponse other) : this() {
+      playerName_ = other.playerName_;
+      isMaster_ = other.isMaster_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public LeaveRoomResponse Clone() {
       return new LeaveRoomResponse(this);
+    }
+
+    /// <summary>Field number for the "player_name" field.</summary>
+    public const int PlayerNameFieldNumber = 1;
+    private string playerName_ = "";
+    /// <summary>
+    ///玩家离开房间的
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string PlayerName {
+      get { return playerName_; }
+      set {
+        playerName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "isMaster" field.</summary>
+    public const int IsMasterFieldNumber = 2;
+    private bool isMaster_;
+    /// <summary>
+    ///玩家是否为房主
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsMaster {
+      get { return isMaster_; }
+      set {
+        isMaster_ = value;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2427,12 +2490,16 @@ namespace Im {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (PlayerName != other.PlayerName) return false;
+      if (IsMaster != other.IsMaster) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
+      if (PlayerName.Length != 0) hash ^= PlayerName.GetHashCode();
+      if (IsMaster != false) hash ^= IsMaster.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -2446,6 +2513,14 @@ namespace Im {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      if (PlayerName.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(PlayerName);
+      }
+      if (IsMaster != false) {
+        output.WriteRawTag(16);
+        output.WriteBool(IsMaster);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -2454,6 +2529,12 @@ namespace Im {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
+      if (PlayerName.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(PlayerName);
+      }
+      if (IsMaster != false) {
+        size += 1 + 1;
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -2464,6 +2545,12 @@ namespace Im {
     public void MergeFrom(LeaveRoomResponse other) {
       if (other == null) {
         return;
+      }
+      if (other.PlayerName.Length != 0) {
+        PlayerName = other.PlayerName;
+      }
+      if (other.IsMaster != false) {
+        IsMaster = other.IsMaster;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -2476,6 +2563,14 @@ namespace Im {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
+          case 10: {
+            PlayerName = input.ReadString();
+            break;
+          }
+          case 16: {
+            IsMaster = input.ReadBool();
+            break;
+          }
         }
       }
     }

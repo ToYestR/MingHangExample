@@ -114,7 +114,8 @@ public class PlayerManager : MonoBehaviour
     /// <param name="pack"></param>
     public void HandleUserLoginRespond(UserloginRsp pack)
     {
-        print("用户登陆");
+        print("用户登陆结果:" +pack.Result+"说明："+pack.Description);
+
     }
     /// <summary>
     /// 处理加入大厅结果
@@ -122,8 +123,8 @@ public class PlayerManager : MonoBehaviour
     /// <param name="pack"></param>
     public void HandleJoinLobbyResponse(JoinLobbyRsp pack)
     {
-        print("加入大厅");
-
+        print("加入大厅结果:"+pack.Result+"说明:" + pack.Desctiption);
+  
     }
     /// <summary>
     /// 处理离开大厅的响应结果
@@ -131,14 +132,27 @@ public class PlayerManager : MonoBehaviour
     public void HandleLeaveLobbyRsp(LeaveLobbyRsp pack)
     {
         print("离开大厅");
+
     }
     /// <summary>
     /// 处理大厅信息查询结果
     /// </summary>
     public void HandleLobbyInfoRsp(LobbyInfoRsp pack)
     {
-        print("大厅信息");
-
+        print("房间信息列表：");
+        foreach(RoomInfo info in pack.MRoomInlobby)
+        {
+            print("房间名：" + info.RoomName
+                + "房间最大人数：" + info.RoomMaxusers
+                + "房间人数：" + info.RoomPeopleMomber
+                + "房间所有玩家名称列表:" + info.Namelist
+                + "房间任务状态：" + info.RoomStatus
+                + "当前观看人员数量:" + info.ViewersNumber
+                + "当前操作人员数量:" + info.OperatorsNumber
+                + "当前操作角色对应表:"+info.UserWithRole
+                + "当前任务序号：" + info.CurrentTaskIndex
+                );
+        }
     }
 
     /// <summary>
@@ -147,6 +161,7 @@ public class PlayerManager : MonoBehaviour
     public void HandleJoinRoomInLobbyRspond(JoinRoomInLobbyResponse pack)
     {
         print("房间登陆");
+        print("演练房间登陆结果：" + pack.Result + "我是否是房主:" + pack.IsMaster + "登陆结果描述：" + pack.Description);
 
     }
     //YYX
@@ -156,6 +171,8 @@ public class PlayerManager : MonoBehaviour
     public void HandleLeaveRoomRspond(LeaveRoomResponse pack)
     {
         print("离开房间");
+        print("玩家名："+pack.PlayerName);
+        print("是否为房主:"+pack.IsMaster);
 
     }
     /// <summary>
@@ -165,7 +182,11 @@ public class PlayerManager : MonoBehaviour
     public void HandleRoomInfo(OnRoomInfoResponse pack)
     {
         print("房间信息");
-
+        print("当前房间的任务状态：" + pack.RoleInfo.RoomStatus
+            + "当前操作人员人员数量:" + pack.RoleInfo.OperatorsNumber
+            + "当前观看人员数量：" + pack.RoleInfo.ViewersNumber
+            + "当前操作角色对应表:" + pack.RoleInfo.UserWithRole
+            + "当前任务序号:" + pack.RoleInfo.CurrentTaskIndex);
     }
     /// <summary>
     /// 处理开始游戏返回结果
@@ -173,8 +194,8 @@ public class PlayerManager : MonoBehaviour
     /// <param name="pack"></param>
     public void HandleStartGameRsp(StartGameRsp pack)
     {
-        print("游戏开始");
-
+        print("演练开始");
+        
     }
     /// <summary>
     /// 处理任务信息返回结果
@@ -182,7 +203,8 @@ public class PlayerManager : MonoBehaviour
     /// <param name="pack"></param>
     public void HandlePushTaskInfoRespond(PushTaskInfoRsp pack)
     {
-        print("任务开始");
+        print("任务信息：");
+        print("任务对应的时间" + pack.Taskid.Time + "任务小章节号" + pack.Taskid.Taskid + "任务的大模块号" + pack.Taskid.Chaterp + "playable的状态" + pack.Taskid.Playablestatus);
 
     }
 
