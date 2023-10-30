@@ -42,6 +42,7 @@ public class Login : MonoBehaviour
             Password =password.text
         }) ;
     }
+
     public void UserJoinLobby()
     {
         ClientManager.Instance.Send(new JoinLobbyRequest()
@@ -149,5 +150,14 @@ public class Login : MonoBehaviour
 
         ClientManager.Instance.Send(new JoinRoomRequest() { RoomNo = roomNum.text });
         Debug.Log("发送加入房间请求，roomNO为 " + roomNum.text);
+    }
+    public void OnLeaveBtnClick()
+    {
+        ClientManager.Instance.Send(new ExitRoomRequest() { RoomNo = roomNum.text });
+        Debug.Log("发送离开房间请求，roomNO为 " + roomNum.text);
+    }
+    public void OnCratePlayerClick()
+    {
+        ClientManager.Instance.Send(new CreatePlayerRequest() { });
     }
 }

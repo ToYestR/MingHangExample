@@ -83,7 +83,7 @@ public class ClientManager
             int len = socket.EndReceive(ar);
             if (len == 0)
             {
-                CloseSocket();
+                //CloseSocket();
                 return;
             }
             message.ReadBuffer(len, HandleResponse);

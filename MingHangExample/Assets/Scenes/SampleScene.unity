@@ -2709,7 +2709,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 24271036}
         m_TargetAssemblyTypeName: Login, Assembly-CSharp
-        m_MethodName: PushGameStart
+        m_MethodName: OnCratePlayerClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4224,7 +4224,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 24271036}
         m_TargetAssemblyTypeName: Login, Assembly-CSharp
-        m_MethodName: OnJoinBtnClick
+        m_MethodName: OnLeaveBtnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
