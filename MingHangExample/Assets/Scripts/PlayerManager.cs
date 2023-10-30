@@ -65,7 +65,7 @@ public class PlayerManager : MonoBehaviour
 
         }
         //处理多人大厅的登陆结果
-        else if (pack != null && pack.Msg.TypeUrl == "type.googleapis.com/Im.JoinRoomInLobbyResponse")
+        else if (pack != null && pack.Msg.TypeUrl == "type.googleapis.com/Im.JoinLobbyRsp")
         {
             HandleJoinLobbyResponse(pack.Msg.Unpack<JoinLobbyRsp>());
         }
@@ -105,6 +105,7 @@ public class PlayerManager : MonoBehaviour
         {
             HandlePushTaskInfoRespond(pack.Msg.Unpack<PushTaskInfoRsp>());
         }
+        this.pack = null;
     }
 
     public ImMsg pack;
@@ -182,7 +183,12 @@ public class PlayerManager : MonoBehaviour
     public void HandleRoomInfo(OnRoomInfoResponse pack)
     {
         print("房间信息");
-        print("当前房间的任务状态：" + pack.RoleInfo.RoomStatus
+        print(
+                "房间名：" + pack.RoleInfo.RoomName
+                + "房间最大人数：" + pack.RoleInfo.RoomMaxusers
+                + "房间人数：" + pack.RoleInfo.RoomPeopleMomber
+                + "房间所有玩家名称列表:" + pack.RoleInfo.Namelist
+                + "当前房间的任务状态：" + pack.RoleInfo.RoomStatus
             + "当前操作人员人员数量:" + pack.RoleInfo.OperatorsNumber
             + "当前观看人员数量：" + pack.RoleInfo.ViewersNumber
             + "当前操作角色对应表:" + pack.RoleInfo.UserWithRole

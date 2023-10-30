@@ -107,9 +107,9 @@ public class ClientManager
         if (pack.Msg.TypeUrl == "type.googleapis.com/Im.LoginResponse")
         {
             //msg = pack.Msg;
-            Debug.Log(pack.Msg.Unpack<LoginResponse>().Result);
-            ClientManager.Instance.Send(new JoinRoomRequest() { RoomNo = Global.currentseneid });
-            Debug.Log("发送加入房间请求，roomNO为 " + Global.currentseneid);
+            //Debug.Log(pack.Msg.Unpack<LoginResponse>().Result);
+            //ClientManager.Instance.Send(new JoinRoomRequest() { RoomNo = Global.currentseneid });
+            //Debug.Log("发送加入房间请求，roomNO为 " + Global.currentseneid);
 
         }
         else if (pack.Msg.TypeUrl == "type.googleapis.com/Im.JoinRoomResponse")

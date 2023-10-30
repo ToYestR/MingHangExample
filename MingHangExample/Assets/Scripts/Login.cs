@@ -27,7 +27,7 @@ public class Login : MonoBehaviour
         JoinRoom.onClick.AddListener(OnJoinBtnClick);
         connectBtn.onClick.AddListener(OnConnectBtnClick);
         //press.onClick.AddListener(Pressure);
-        ClientManager.Instance.InitSocket("54.223.80.84", "10001");
+        ClientManager.Instance.InitSocket("47.101.199.191", "10001");
         //登陆+房间进入
         //LoginFuction();
     }
