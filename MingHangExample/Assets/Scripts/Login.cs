@@ -41,6 +41,7 @@ public class Login : MonoBehaviour
             Username = username.text,
             Password =password.text
         }) ;
+        Global.UserName = username.text;
     }
 
     public void UserJoinLobby()
@@ -158,6 +159,6 @@ public class Login : MonoBehaviour
     }
     public void OnCratePlayerClick()
     {
-        ClientManager.Instance.Send(new CreatePlayerRequest() { });
+        ClientManager.Instance.Send(new CreatePlayerRequest() { PlayerPack= new PlayerPack { Uid=Global.UserName} });
     }
 }
