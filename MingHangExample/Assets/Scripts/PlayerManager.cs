@@ -43,6 +43,11 @@ public class PlayerManager : MonoBehaviour
             HandleJoinRommResponse(pack.Msg.Unpack<JoinRoomResponse>());
             
         }
+        else if (pack != null && pack.Msg.TypeUrl == "type.googleapis.com/Im.CreatePlayerResponse")
+        {
+            HandleCreatePlayerResponse(pack.Msg.Unpack<CreatePlayerResponse>());
+
+        }
         else if (pack != null && pack.Msg.TypeUrl == "type.googleapis.com/Im.AddPlayer")
         {
             HandleAddPlayer(pack.Msg.Unpack<AddPlayer>());
@@ -222,13 +227,11 @@ public class PlayerManager : MonoBehaviour
         {
             GameObject.Find("Canvas").gameObject.SetActive(false);
         }
-
         Debug.Log("执行了");
         Debug.Log(pack.PlayerPack.Count);
         foreach (var p in pack.PlayerPack)
         {
             Debug.Log("添加角色" + p.Uid);
-
             //pos.x += (posindex += 2);
             GameObject g = Object.Instantiate(player, Vector3.zero, Quaternion.identity);
             if (p.Uid.Equals(ClientManager.Instance.uid))
@@ -243,8 +246,6 @@ public class PlayerManager : MonoBehaviour
 
                  
             }
-
-
             else
             {
                 //创建其他客户端的角色
@@ -265,7 +266,54 @@ public class PlayerManager : MonoBehaviour
             players.Add(p.Uid, g);
 
         }
+    }
 
+    public void HandleCreatePlayerResponse(CreatePlayerResponse pack)
+    {
+        this.pack = null;
+        if (GameObject.Find("Canvas") != null)
+        {
+            GameObject.Find("Canvas").gameObject.SetActive(false);
+        }
+        Debug.Log("执行了");
+        Debug.Log(pack.PlayerPack.Count);
+        foreach (var p in pack.PlayerPack)
+        {
+            Debug.Log("添加角色" + p.Uid);
+            //pos.x += (posindex += 2);
+            GameObject g = Object.Instantiate(player, Vector3.zero, Quaternion.identity);
+            if (p.Uid.Equals(ClientManager.Instance.uid))
+            {
+                //创建本地角色
+                var controller = g.GetComponent<ThirdPersonController>();
+                CharacterRistic characterRistic = g.GetComponent<CharacterRistic>();
+                characterRistic.isLocal = true;
+                characterRistic.username = p.Uid;
+                g.AddComponent<UpStatusRequest>();
+                g.AddComponent<UpdateStatus>();
+
+
+            }
+            else
+            {
+                //创建其他客户端的角色
+                CharacterRistic characterRistic = g.GetComponent<CharacterRistic>();
+                characterRistic.isLocal = false;
+                characterRistic.username = p.Uid;
+                var controller = g.GetComponent<ThirdPersonController>();
+                g.AddComponent<RemoteCharacter>();
+
+                //Object.Destroy(g.GetComponentInChildren<Camera>().gameObject);
+
+                Object.Destroy(controller.GetComponentInChildren<Camera>().gameObject);
+                Object.Destroy(controller.GetComponentInChildren<Cinemachine.CinemachineVirtualCamera>().gameObject);
+
+                Object.Destroy(g.GetComponent<PlayerInput>());
+
+            }
+            players.Add(p.Uid, g);
+
+        }
     }
     public void HandleAddPlayer(AddPlayer pack)
     {
