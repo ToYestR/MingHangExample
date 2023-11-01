@@ -9,10 +9,12 @@ using StarterAssets;
 using UnityEngine.InputSystem;
 using Google.Protobuf.WellKnownTypes;
 using System.Runtime.Serialization;
+using System.Linq;
 
 public class PlayerManager : MonoBehaviour
 {
     GameObject player;
+    public GameObject m_canvas;
     private Dictionary<string, GameObject> players = new Dictionary<string, GameObject>();
     static PlayerManager _instance;
     public static PlayerManager Instance
@@ -176,10 +178,17 @@ public class PlayerManager : MonoBehaviour
     /// </summary>
     public void HandleLeaveRoomRspond(LeaveRoomResponse pack)
     {
+        
         print("离开房间");
         print("玩家名："+pack.PlayerName);
         print("是否为房主:"+pack.IsMaster);
-
+        for(int i=0;i<players.Count;i++)
+        {
+            KeyValuePair<string, GameObject> kv = players.ElementAt(i);
+            DestroyImmediate(kv.Value);
+            players.Remove(kv.Key);
+        }
+        m_canvas.SetActive(true);
     }
     /// <summary>
     /// 返回房间信息
@@ -291,8 +300,6 @@ public class PlayerManager : MonoBehaviour
                 characterRistic.username = p.Uid;
                 g.AddComponent<UpStatusRequest>();
                 g.AddComponent<UpdateStatus>();
-
-
             }
             else
             {
@@ -347,8 +354,14 @@ public class PlayerManager : MonoBehaviour
     public void HandleExitRoom(ExitRoom pack)
     {
         var playerPack = pack.PlayerPack;
-        players.TryGetValue(playerPack.Uid, out GameObject g);
-        DestroyImmediate(g);
+        for (int i = 0; i < players.Count; i++)
+        {
+            KeyValuePair<string, GameObject> kv = players.ElementAt(i);
+            DestroyImmediate(kv.Value);
+            players.Remove(kv.Key);
+        }
+        m_canvas.SetActive(true);
+
     }
 
     private void OnDestroy()
