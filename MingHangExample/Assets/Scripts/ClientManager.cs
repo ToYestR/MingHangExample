@@ -103,48 +103,53 @@ public class ClientManager
     {
 
         Debug.Log(pack.Msg.TypeUrl);
+        playerManager.immsgQ.Enqueue(pack);
+        return;
+        //if (pack.Msg.TypeUrl == "type.googleapis.com/Im.LoginResponse")
+        //{
+        //    //msg = pack.Msg;
+        //    //Debug.Log(pack.Msg.Unpack<LoginResponse>().Result);
+        //    //ClientManager.Instance.Send(new JoinRoomRequest() { RoomNo = Global.currentseneid });
+        //    //Debug.Log("发送加入房间请求，roomNO为 " + Global.currentseneid);
 
-        if (pack.Msg.TypeUrl == "type.googleapis.com/Im.LoginResponse")
-        {
-            //msg = pack.Msg;
-            //Debug.Log(pack.Msg.Unpack<LoginResponse>().Result);
-            //ClientManager.Instance.Send(new JoinRoomRequest() { RoomNo = Global.currentseneid });
-            //Debug.Log("发送加入房间请求，roomNO为 " + Global.currentseneid);
-
-        }
-        else if (pack.Msg.TypeUrl == "type.googleapis.com/Im.JoinRoomResponse")
-        {
-            Debug.Log("执行了");
-            playerManager.pack = pack;
+        //}
+        //else if (pack.Msg.TypeUrl == "type.googleapis.com/Im.JoinRoomResponse")
+        //{
+        //    Debug.Log("执行了");
+        //    playerManager.pack = pack;
             
 
-        }
-        else if (pack.Msg.TypeUrl == "type.googleapis.com/Im.AddPlayer")
-        {
-            Debug.Log("执行了");
-            playerManager.pack = pack;
+        //}
+        //else if (pack.Msg.TypeUrl == "type.googleapis.com/Im.AddPlayer")
+        //{
+        //    Debug.Log("执行了");
+        //    playerManager.pack = pack;
 
-        }
-        else if (pack.Msg.TypeUrl == "type.googleapis.com/Im.UpPos")
-        {
-            Debug.Log("执行了");
-            playerManager.pack = pack;
+        //}
+        //else if (pack.Msg.TypeUrl == "type.googleapis.com/Im.UpPos")
+        //{
+        //    Debug.Log("执行了");
+        //    playerManager.pack = pack;
 
-        }
+        //}
 
-        else if (pack.Msg.TypeUrl == "type.googleapis.com/Im.ExitRoom")
-        {
-            Debug.Log("执行了");
-            playerManager.pack = pack;
+        //else if (pack.Msg.TypeUrl == "type.googleapis.com/Im.ExitRoom")
+        //{
+        //    Debug.Log("执行了");
+        //    playerManager.pack = pack;
 
-        }
-        else if(pack.Msg.TypeUrl.Contains("type.googleapis.com"))
-        {
-            //打印消息头地址
-            Debug.Log(pack.Msg.TypeUrl);
-            //包信息赋值
-            playerManager.pack = pack;
-        }
+        //}
+        //else if (pack.Msg.TypeUrl == "type.googleapis.com/Im.SuccessResponse")
+        //{
+
+        //}
+        //else if (pack.Msg.TypeUrl.Contains("type.googleapis.com"))
+        //{
+        //    //打印消息头地址
+        //    Debug.Log(pack.Msg.TypeUrl);
+        //    //包信息赋值
+        //    playerManager.pack = pack;
+        //}
 
 
     }

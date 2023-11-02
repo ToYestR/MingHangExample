@@ -17,6 +17,8 @@ public class PlayerManager : MonoBehaviour
     public GameObject m_canvas;
     private Dictionary<string, GameObject> players = new Dictionary<string, GameObject>();
     static PlayerManager _instance;
+    public Queue<ImMsg> immsgQ = new Queue<ImMsg>();
+
     public static PlayerManager Instance
     {
         get
@@ -39,80 +41,83 @@ public class PlayerManager : MonoBehaviour
 
     private void Update()
     {
+        if (immsgQ.Count > 0)
+        {
+            pack = immsgQ.Dequeue();
+            if (pack != null && pack.Msg.TypeUrl == "type.googleapis.com/Im.JoinRoomResponse")
+            {
+                HandleJoinRommResponse(pack.Msg.Unpack<JoinRoomResponse>());
 
-        if (pack != null && pack.Msg.TypeUrl == "type.googleapis.com/Im.JoinRoomResponse")
-        {
-            HandleJoinRommResponse(pack.Msg.Unpack<JoinRoomResponse>());
-            
-        }
-        else if (pack != null && pack.Msg.TypeUrl == "type.googleapis.com/Im.CreatePlayerResponse")
-        {
-            HandleCreatePlayerResponse(pack.Msg.Unpack<CreatePlayerResponse>());
+            }
+            else if (pack != null && pack.Msg.TypeUrl == "type.googleapis.com/Im.CreatePlayerResponse")
+            {
+                HandleCreatePlayerResponse(pack.Msg.Unpack<CreatePlayerResponse>());
 
-        }
-        else if (pack != null && pack.Msg.TypeUrl == "type.googleapis.com/Im.AddPlayer")
-        {
-            HandleAddPlayer(pack.Msg.Unpack<AddPlayer>());
+            }
+            else if (pack != null && pack.Msg.TypeUrl == "type.googleapis.com/Im.AddPlayer")
+            {
+                HandleAddPlayer(pack.Msg.Unpack<AddPlayer>());
 
-        }
-        else if (pack != null && pack.Msg.TypeUrl == "type.googleapis.com/Im.UpPos")
-        {
-            HandleUpPos(pack.Msg.Unpack<UpPos>());
+            }
+            else if (pack != null && pack.Msg.TypeUrl == "type.googleapis.com/Im.UpPos")
+            {
+                HandleUpPos(pack.Msg.Unpack<UpPos>());
 
-        }
-        else if (pack != null && pack.Msg.TypeUrl == "type.googleapis.com/Im.ExitRoom")
-        {
-            HandleExitRoom(pack.Msg.Unpack<ExitRoom>());
+            }
+            else if (pack != null && pack.Msg.TypeUrl == "type.googleapis.com/Im.ExitRoom")
+            {
+                HandleExitRoom(pack.Msg.Unpack<ExitRoom>());
 
-        }
-        //处理账号密码的登陆结果
-        else if (pack != null && pack.Msg.TypeUrl == "type.googleapis.com/Im.UserloginRsp")
-        {
-            HandleUserLoginRespond(pack.Msg.Unpack<UserloginRsp>());
+            }
+            //处理账号密码的登陆结果
+            else if (pack != null && pack.Msg.TypeUrl == "type.googleapis.com/Im.UserloginRsp")
+            {
+                HandleUserLoginRespond(pack.Msg.Unpack<UserloginRsp>());
 
-        }
-        //处理多人大厅的登陆结果
-        else if (pack != null && pack.Msg.TypeUrl == "type.googleapis.com/Im.JoinLobbyRsp")
-        {
-            HandleJoinLobbyResponse(pack.Msg.Unpack<JoinLobbyRsp>());
-        }
-        //处理多人大厅的基础信息刷新结果
-        else if (pack != null && pack.Msg.TypeUrl == "type.googleapis.com/Im.LobbyInfoRsp")
-        {
-            HandleLobbyInfoRsp(pack.Msg.Unpack<LobbyInfoRsp>());
-        }
-        //处理多人大厅的退出结果
-        else if (pack != null && pack.Msg.TypeUrl == "type.googleapis.com/Im.LeaveLobbyRsp")
-        {
-            HandleLeaveLobbyRsp(pack.Msg.Unpack<LeaveLobbyRsp>());
-        }
-        //处理多人演练房间的加入返回结果
-        else if (pack != null && pack.Msg.TypeUrl == "type.googleapis.com/Im.JoinRoomInLobbyResponse")
-        {
-            HandleJoinRoomInLobbyRspond(pack.Msg.Unpack<JoinRoomInLobbyResponse>());
-        }
+            }
+            //处理多人大厅的登陆结果
+            else if (pack != null && pack.Msg.TypeUrl == "type.googleapis.com/Im.JoinLobbyRsp")
+            {
+                HandleJoinLobbyResponse(pack.Msg.Unpack<JoinLobbyRsp>());
+            }
+            //处理多人大厅的基础信息刷新结果
+            else if (pack != null && pack.Msg.TypeUrl == "type.googleapis.com/Im.LobbyInfoRsp")
+            {
+                HandleLobbyInfoRsp(pack.Msg.Unpack<LobbyInfoRsp>());
+            }
+            //处理多人大厅的退出结果
+            else if (pack != null && pack.Msg.TypeUrl == "type.googleapis.com/Im.LeaveLobbyRsp")
+            {
+                HandleLeaveLobbyRsp(pack.Msg.Unpack<LeaveLobbyRsp>());
+            }
+            //处理多人演练房间的加入返回结果
+            else if (pack != null && pack.Msg.TypeUrl == "type.googleapis.com/Im.JoinRoomInLobbyResponse")
+            {
+                HandleJoinRoomInLobbyRspond(pack.Msg.Unpack<JoinRoomInLobbyResponse>());
+            }
 
-        //处理多人演练房间的退出结果
-        else if (pack != null && pack.Msg.TypeUrl == "type.googleapis.com/Im.LeaveRoomResponse")
-        {
-            HandleLeaveRoomRspond(pack.Msg.Unpack<LeaveRoomResponse>());
+            //处理多人演练房间的退出结果
+            else if (pack != null && pack.Msg.TypeUrl == "type.googleapis.com/Im.LeaveRoomResponse")
+            {
+                HandleLeaveRoomRspond(pack.Msg.Unpack<LeaveRoomResponse>());
+            }
+            //处理多人演练房间基础信息更新
+            else if (pack != null && pack.Msg.TypeUrl == "type.googleapis.com/Im.OnRoomInfoResponse")
+            {
+                HandleRoomInfo(pack.Msg.Unpack<OnRoomInfoResponse>());
+            }
+            //处理一局回合的开始
+            else if (pack != null && pack.Msg.TypeUrl == "type.googleapis.com/Im.StartGameRsp")
+            {
+                HandleStartGameRsp(pack.Msg.Unpack<StartGameRsp>());
+            }
+            //处理任务消息信息的同步
+            else if (pack != null && pack.Msg.TypeUrl == "type.googleapis.com/Im.PushTaskInfoRsp")
+            {
+                HandlePushTaskInfoRespond(pack.Msg.Unpack<PushTaskInfoRsp>());
+            }
         }
-        //处理多人演练房间基础信息更新
-        else if (pack != null && pack.Msg.TypeUrl == "type.googleapis.com/Im.OnRoomInfoResponse")
-        {
-            HandleRoomInfo(pack.Msg.Unpack<OnRoomInfoResponse>());
-        }
-        //处理一局回合的开始
-        else if (pack != null && pack.Msg.TypeUrl == "type.googleapis.com/Im.StartGameRsp")
-        {
-            HandleStartGameRsp(pack.Msg.Unpack<StartGameRsp>());
-        }
-        //处理任务消息信息的同步
-        else if (pack != null && pack.Msg.TypeUrl == "type.googleapis.com/Im.PushTaskInfoRsp")
-        {
-            HandlePushTaskInfoRespond(pack.Msg.Unpack<PushTaskInfoRsp>());
-        }
-        this.pack = null;
+        //this.pack = null;
     }
 
     public ImMsg pack;
