@@ -116,6 +116,10 @@ public class PlayerManager : MonoBehaviour
             {
                 HandlePushTaskInfoRespond(pack.Msg.Unpack<PushTaskInfoRsp>());
             }
+            else if (pack != null && pack.Msg.TypeUrl == "type.googleapis.com/Im.RemovePlayer")
+            {
+                HandleRemovePlayer(pack.Msg.Unpack<RemovePlayer>());
+            }
         }
         //this.pack = null;
     }
@@ -191,10 +195,34 @@ public class PlayerManager : MonoBehaviour
         {
             KeyValuePair<string, GameObject> kv = players.ElementAt(i);
             DestroyImmediate(kv.Value);
-            players.Remove(kv.Key);
+            //players.Remove(kv.Key);
         }
+        players.Clear();
         m_canvas.SetActive(true);
     }
+    public void HandleRemovePlayer(RemovePlayer pack)
+    {
+        var playerPack = pack.PlayerPack;
+        if (playerPack.Uid == ClientManager.Instance.uid)
+        {
+            Debug.Log("下线是我本人");
+            for (int i = 0; i < players.Count; i++)
+            {
+                KeyValuePair<string, GameObject> kv = players.ElementAt(i);
+                DestroyImmediate(kv.Value);
+            }
+            players.Clear();
+            m_canvas.SetActive(true);
+        }
+        else
+        {
+            Debug.Log("下线是其他人");
+            players.TryGetValue(playerPack.Uid, out GameObject g);
+            DestroyImmediate(g);
+            players.Remove(playerPack.Uid);
+        }
+    }
+
     /// <summary>
     /// 返回房间信息
     /// </summary>
@@ -245,13 +273,13 @@ public class PlayerManager : MonoBehaviour
         Debug.Log(pack.PlayerPack.Count);
         foreach (var p in pack.PlayerPack)
         {
-            Debug.Log("添加角色" + p.Uid);
+            Debug.LogWarning("添加角色" + p.Uid);
             //pos.x += (posindex += 2);
             GameObject g = Object.Instantiate(player, Vector3.zero, Quaternion.identity);
             if (p.Uid.Equals(ClientManager.Instance.uid))
             {
                 //创建本地角色
-                var controller= g.GetComponent<ThirdPersonController>();
+                var controller = g.GetComponent<ThirdPersonController>();
                 CharacterRistic characterRistic = g.GetComponent<CharacterRistic>();
                 characterRistic.isLocal = true;
                 characterRistic.username = p.Uid;
@@ -359,13 +387,24 @@ public class PlayerManager : MonoBehaviour
     public void HandleExitRoom(ExitRoom pack)
     {
         var playerPack = pack.PlayerPack;
-        for (int i = 0; i < players.Count; i++)
+        if (playerPack.Uid == ClientManager.Instance.uid)
         {
-            KeyValuePair<string, GameObject> kv = players.ElementAt(i);
-            DestroyImmediate(kv.Value);
-            players.Remove(kv.Key);
+            Debug.Log("下线是我本人");
+            for (int i = 0; i < players.Count; i++)
+            {
+                KeyValuePair<string, GameObject> kv = players.ElementAt(i);
+                DestroyImmediate(kv.Value);
+            }
+            players.Clear();
+            m_canvas.SetActive(true);
         }
-        m_canvas.SetActive(true);
+        else
+        {
+            Debug.Log("下线是其他人");
+            players.TryGetValue(playerPack.Uid, out GameObject g);
+            DestroyImmediate(g);
+            players.Remove(playerPack.Uid);
+        }
 
     }
 

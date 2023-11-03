@@ -119,26 +119,6 @@ public class Login : MonoBehaviour
     {
         ClientManager.Instance.InitSocket(serverIP.text, port.text);
     }
-    /// <summary>
-    /// 登陆的处理，自动加入房间
-    /// </summary>
-    public void LoginFuction()
-    {
-        ClientManager.Instance.Send(new LoginRequest()
-        {
-            Uid = Global.uid.ToString(),
-            PlayerPack = new PlayerPack()
-            {
-                Uid = Global.uid.ToString(),
-                NickName = Global.nickname,
-                Chatno = Global.chatNo,
-                RoleInfo=Global.roleinfo
-            }
-        }) ;
-        ClientManager.Instance.uid = Global.uid.ToString();
-        Debug.Log("发送登录请求，uid为" + Global.uid);
-
-    }
     public void OnLoginBtnClick()
     {
 
